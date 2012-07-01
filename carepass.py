@@ -1,5 +1,11 @@
 import os
-import urllib
+
+try:
+    # Python 3
+    from urllib.parse import urlencode
+except ImportError:
+    # Python 2
+    from urllib import urlencode
 
 import requests
 
@@ -39,7 +45,7 @@ class GoodRxAPI(object):
             ndc=ndc)
 
     def _do_get(self, method, **kwargs):
-        url = self._get_url('compare') + '&' + urllib.urlencode(kwargs)
+        url = self._get_url('compare') + '&' + urlencode(kwargs)
         response = requests.get(url)
         return response.json
 

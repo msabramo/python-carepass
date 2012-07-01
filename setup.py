@@ -1,3 +1,4 @@
+import os
 import sys
 
 extra = {}
@@ -13,27 +14,25 @@ import multiprocessing
 
 author = "Marc Abramowitz"
 email = "marc@marc-abramowitz.com"
+long_description = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 
 setup(name='python-carepass',
       version='0.0.0',
-      description='',
-      long_description='',
-      data_files=[('', ['README.rst'])],
+      description="Python module for using Aetna's Carepass APIs",
+      long_description=long_description,
+      data_files=[('', ['README.md'])],
       classifiers=[
             'License :: OSI Approved :: BSD License',
             'Intended Audience :: Developers',
             'Programming Language :: Python',
             'Programming Language :: Python :: 2',
-            'Programming Language :: Python :: 2.4',
-            'Programming Language :: Python :: 2.5',
-            'Programming Language :: Python :: 2.6',
             'Programming Language :: Python :: 2.7',
             'Programming Language :: Python :: 3',
-            'Programming Language :: Python :: 3.1',
+            'Programming Language :: Python :: 3.2',
           ],
       author=author,
       author_email=email,
-      url='http://github.com/msabramo/anyserializer',
+      url='https://github.com/msabramo/python-carepass',
       license='BSD',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       zip_safe=False,
